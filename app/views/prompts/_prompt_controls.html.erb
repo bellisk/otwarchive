@@ -52,5 +52,10 @@
       <% end %>
     <% end %>
 
+    <% # The link to all requests in the sign-up should show up if the prompt is not anonymous %>
+    <% if !prompt.anonymous? %>
+      <li><%= link_to ts("All Requests in Sign-up"), collection_signup_path(collection, challenge_signup) %></li>
+    <% end %>
+
   </ul>
 <% end %>
